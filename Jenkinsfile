@@ -11,8 +11,9 @@ node {
        stage('BuildArtifact'){
 
          // sh 'mvn install'
-	       
-	       sh 'mvn clean'
+	       tool name: 'maven', type: 'maven'
+
+	       bat 'mvn clean deploy'
        }
 	   
       stage('Sonar') {
