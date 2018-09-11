@@ -5,9 +5,9 @@
 
   <groupId>com.mt</groupId>
   <artifactId>maven-web-project</artifactId>
-  <version>1.1</version>
   <packaging>war</packaging>
-  <name>Maven Web Project 18th August</name>
+  <version>1.0</version>
+  <name>Maven Web Project 22nd April</name>
   <description>Maven Web Project for Java Project</description>
 
  <organization>
@@ -77,21 +77,39 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		<!--<dependency>
+			<groupId>org.wildfly.bom</groupId>
+			<artifactId>wildfly</artifactId>
+			<version>13.0.0.Final</version>
+			<type>pom</type>
+		</dependency>-->
   </dependencies>
 
 	<distributionManagement>
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://localhost:8081/repository/Maven-Day2-Project-Release/</url>
+	      <url>http://localhost:8081/repository/mavenprojectboth/</url>
 	    </repository>
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://localhost:8081/repository/Maven-Day2-Project-snapshot/</url>
+	      <url>http://localhost:8081/repository/mavenprojectboth/</url>
 	    </snapshotRepository>
-	</distributionManagement>
+	</distributionManagement> 
 	
+	<!--<distributionManagement>
+	    <repository>
+	      <id>jfrog</id>
+	      <name>Mithun Technologies Releases Nexus Repository</name>
+	      <url>http://localhost:8090/artifactory/mavenwebprojectrelease/</url>
+	    </repository>
+	    <snapshotRepository>
+	      <id>jfrog</id>
+	      <name>Mithun Technologies Snapshot Nexus Repository </name>
+	      <url>http://localhost:8090/artifactory/mavenwebprojectsnapshot/</url>
+	    </snapshotRepository>
+	</distributionManagement>-->
 	
   <build>
     <plugins>
@@ -103,7 +121,23 @@
           <source>1.7</source>
           <target>1.7</target>
         </configuration>
-      </plugin>     
+      </plugin> 
+			<plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+                <version>1.2.2.Final</version>
+            </plugin> 
+			<!--<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>tomcat-maven-plugin</artifactId>
+				<version>1.1</version>
+				<configuration>
+					<mode>war</mode>
+					<url>http://localhost:8082/manager</url>
+					<server>tomcat</server>
+					<path>/mavenwebproject</path>
+				</configuration>
+</plugin>-->
     </plugins>
   </build>
 
