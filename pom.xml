@@ -98,7 +98,7 @@
 	    </snapshotRepository>
 	</distributionManagement> 
 	
-	<!--<distributionManagement>
+	<distributionManagement>
 	    <repository>
 	      <id>jfrog</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
@@ -109,7 +109,7 @@
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
 	      <url>http://localhost:8090/artifactory/mavenwebprojectsnapshot/</url>
 	    </snapshotRepository>
-	</distributionManagement>-->
+	</distributionManagement>
 	
   <build>
     <plugins>
